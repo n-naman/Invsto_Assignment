@@ -1,8 +1,9 @@
 Based on the implemented Moving Average Crossover strategy for HINDALCO stock data, here's the key information:
+
+
 Strategy Performance Summary
 
 Overall Performance Metrics:
-
 Total Strategy Return: -3.96%
 Total Market Return: 96.05%
 Strategy Win Rate: 53.91%
@@ -11,7 +12,6 @@ Strategy Win Rate: 53.91%
 Visual Performance Analysis:
 
 The first graph shows the Moving Average Crossover Strategy with:
-
 Blue line: Closing price
 Green line: Short-term MA (10-day)
 Red line: Long-term MA (50-day)
@@ -20,7 +20,6 @@ Red triangles: Sell signals
 
 
 The second graph displays Cumulative Returns comparing:
-
 Green line: Strategy returns
 Blue line: Market returns
 
@@ -28,7 +27,6 @@ Blue line: Market returns
 
 
 Key Observations:
-
 The strategy underperformed the market significantly
 While the win rate is above 50%, the returns were negative
 The market showed strong upward trends that the strategy didn't fully capture
@@ -36,13 +34,12 @@ The market showed strong upward trends that the strategy didn't fully capture
 
 
 Instructions to Run the Code
-
 Setup Requirements:
-bashCopy# Install required packages
+# Install required packages
 pip install pandas mysql-connector-python matplotlib numpy
 
 Database Setup:
-sqlCopy# Login to MySQL
+# Login to MySQL
 mysql -u root -p
 
 # Create database
@@ -52,7 +49,7 @@ Configure Database Connection:
 
 Open assign.py
 Update these variables with your MySQL credentials:
-pythonCopyDB_HOST = "localhost"
+DB_HOST = "localhost"
 DB_USER = "your_username"
 DB_PASS = "your_password"
 DB_NAME = "stock_analysis"
@@ -63,18 +60,18 @@ Data Import:
 
 Place your HINDALCO_1D.xlsx file in the correct path
 Update the file path in both scripts:
-pythonCopyfile_path = "path/to/your/HINDALCO_1D.xlsx"
+file_path = "path/to/your/HINDALCO_1D.xlsx"
 
 Run the data import:
-bashCopypython assign.py
+assign.py
 
 
 
 Run Strategy:
-bashCopypython moving_average_strategy.py
+moving_average_strategy.py
 
 Run Tests:
-bashCopypython -m unittest test.py
+python -m unittest test.py
 
 
 The code will generate two plots showing the strategy performance and will print the performance metrics to the console.
